@@ -1,0 +1,442 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* Universal selector
+    - Sets the default values for all elements
+    - Box-sizing makes it so that the margin/padding is not part of the overall size of the element
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  - Always set fonts in body
+  - All children will inherit the same font
+  - padding = adds border to whole page (not inherited)
+*/
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+/* 
+  - position: relative = positions of children will be relative to parent
+  - vh = percentage of the view height (100 = always same height)
+  - bg-img = linear-gradient.. creates a color gradient in specified direction for colors on top of the img specified after
+  - size: cover = whatever the size of the viewport/element always fit the element inside the box
+  - position: top = image always remains at the top of the page
+  - clip-path: clips box based on coordinates => coordinates go TL, TR, BR, BL
+  - points are: x axis y axis ... can be pixels, percentage etc
+*/
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: url("./images/bigBend.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+/* 
+  - top, left = Shift based on percentage of width/height parent element
+  - transform, translate = will shift the element based on its own height/width, not parent element
+  - text-align = any inline-block elements are considered text, so it will center those
+*/
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 
+  - backface-visibility = hides the area behind the element, fixes shaking in animations
+*/
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 50px;
+}
+
+/* 
+  - display: block = turns element into a block-level element (rather than inline which is default for span)
+  - animation
+    - iteration-count = specify a number of times for the animation to iterate
+    - delay = delay when the animation starts after event trigger
+    - timing-function = how the animation comes into the screen
+*/
+.heading-primary-main {
+  display: block;
+  font-size: 65px;
+  font-weight: 300;
+  letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  /* animation-iteration-count: 3;
+  animation-delay: 0.5s; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 17.4px;
+
+  animation: moveInRight 1.5s ease-out;
+}
+
+/* 
+  - keyframes = declare an animation <animationName>
+  - 0% -> 100% = the timeline of the animation ... 0 is before it starts, 100 is when it finsishes
+  - transform ... translateX, Y etc = move on those axis
+    - For X = positive values move to right, negative values move to left
+    - For Y = positive values move up, negative values move down
+  - NOTE: only animate the opacity and transform properties
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    /* 0 = put to original position */
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    /* 0 = put to original position */
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    /* 0 = put to original position */
+    transform: translate(0);
+  }
+}
+
+/* 
+  - btn:link = pseudo class
+    - pseudo class = special state of a selector
+      - ex) link = state of button selector
+  - display: inline-block = gives the element its own space to occupy, same as text
+    - To center: set text-align:center of parent element since the block element is like text
+  - border-radius = round corners of element
+*/
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* first value = top/bottom, second value = left/right */
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+/* 
+  - box-shadow = create a shadow for an element
+    - Properties:
+      1) X direction shadow
+      2) Y direction shadow
+      3) blur of shadow
+*/
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  /* Decrease size/blur of shadow in order to give appearance of moving closer to page */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+/* 
+  - ::after = pseudo-element
+    - content: MUST SPECIFY EVEN IF BLANK
+    - display: MUST SPECIFY
+
+
+*/
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+/* 
+  - After pseudo element only when button is hovered
+  - scale = scale the element compared to original size
+*/
+.btn:hover::after {
+  transform: scaleX(1.2) scaleY(1.4);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+.ml10 {
+  position: relative;
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 0.25em;
+  color: #fff;
+  z-index: 2;
+}
+
+.ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
+
+.fs-bg-div {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.lake-vid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* .fs-bg-div .overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  background: linear-gradient(to right bottom, #7bf765af, #28b485c7);
+  opacity: 0.5;
+} */
+
+@media (max-width: 767px) {
+  .fs-bg-div {
+    background: url("../public/images/rockInLake.png") center center / cover
+      no-repeat;
+  }
+
+  .lake-vid {
+    display: none;
+  }
+}
+
+#about-btn-div {
+  top: 10%;
+}
+
+#projects-btn-div {
+  top: 25%;
+}
+
+#home-btn-div {
+  position: absolute;
+  top: 25%;
+}
+
+.home-topper-div {
+  position: absolute;
+  top: 85%;
+  width: 95vw;
+}
+
+.home-topper {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  stroke-linecap: square;
+  stroke-linejoin: square;
+  stroke-miterlimit: 1.5;
+}
+
+.topper-line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1.5s ease-in-out 0.5s 1 forwards;
+}
+
+.logo-outline {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s ease-in 0.5s 1 forwards;
+}
+
+.logo-triangle {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s ease-in-out 0.5s 1 forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.about-title {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+}
+
+.wa-img-div {
+  position: absolute;
+  top: 43%;
+  left: 78%;
+}
+
+.ml3 {
+  position: relative;
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 0.25em;
+  color: #777;
+}
+
+.ml12 {
+  font-weight: 450;
+  font-size: 4em;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+#work-btn-div {
+  top: 10%;
+}
+
+#offclock-btn-div {
+  margin-top: 10vh;
+}
+
+#abt-btn-div {
+  position: absolute;
+  top: 35%;
+}
+
+/* @-webkit-keyframes rotatePushTop {
+  from {
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+  }
+}
+@keyframes rotatePushTop {
+  from {
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+  }
+}
+
+@-webkit-keyframes rotatePullBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateX(90deg);
+  }
+}
+@keyframes rotatePullBottom {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+  }
+} */
