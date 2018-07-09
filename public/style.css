@@ -364,16 +364,17 @@ body {
   }
 }
 
-.about-title {
+.who-div {
   position: absolute;
-  left: 50%;
-  top: 5%;
+  left: 42.7%;
+  top: 10%;
+  width: 34vw;
 }
 
 .wa-img-div {
   position: absolute;
-  top: 43%;
-  left: 78%;
+  top: 44%;
+  left: 74%;
 }
 
 .ml3 {
@@ -396,6 +397,10 @@ body {
   line-height: 1em;
 }
 
+.pl12 .letter {
+  display: inline-block;
+}
+
 #work-btn-div {
   top: 10%;
 }
@@ -406,9 +411,75 @@ body {
 
 #abt-btn-div {
   position: absolute;
-  top: 35%;
+  top: 30%;
 }
 
+.bio-div {
+  position: absolute;
+  top: 33%;
+  left: 39%;
+  width: 40vw;
+  margin-top: 0;
+}
+
+.bio {
+  color: #777;
+}
+
+.stop-by-div {
+  text-align: center;
+  margin-top: 10px;
+}
+.stop-by {
+  display: inline-block;
+}
+
+.go-home-div {
+  position: absolute;
+  top: 85%;
+  animation: fadeInLeft 3s ease-in-out 0.5s 1 forwards;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  80% {
+    -webkit-transform: translate3d(105%, 0, 0);
+    transform: translate3d(95%, 0, 0);
+  }
+
+  100% {
+    opacity: 0.8;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-105%, 0, 0);
+  }
+  80% {
+    -webkit-transform: translate3d(110%, 0, 0);
+    transform: translate3d(95%, 0, 0);
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
 /* @-webkit-keyframes rotatePushTop {
   from {
   }
