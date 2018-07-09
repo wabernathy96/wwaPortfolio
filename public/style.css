@@ -368,7 +368,7 @@ body {
   position: absolute;
   left: 42.7%;
   top: 10%;
-  width: 34vw;
+  width: 35vw;
 }
 
 .wa-img-div {
@@ -561,6 +561,9 @@ body {
   background-color: rgba(255, 255, 255, 0.158);
   width: 35%;
   color: #fff;
+}
+.work-head {
+  position: absolute;
 }
 .job-btn-div {
   position: absolute;
