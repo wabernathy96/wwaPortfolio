@@ -372,9 +372,11 @@ body {
 }
 
 .wa-img-div {
+  visibility: hidden;
   position: absolute;
   top: 44%;
   left: 74%;
+  animation: fadeInRight 2s ease-in-out 0.5s 1 forwards;
 }
 
 .ml3 {
@@ -434,7 +436,8 @@ body {
   display: inline-block;
 }
 
-.go-home-div {
+.go-back-div {
+  visibility: hidden;
   position: absolute;
   top: 85%;
   animation: fadeInLeft 3s ease-in-out 0.5s 1 forwards;
@@ -446,14 +449,17 @@ body {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
   }
-
-  80% {
-    -webkit-transform: translate3d(105%, 0, 0);
-    transform: translate3d(95%, 0, 0);
+  10% {
+    visibility: visible;
   }
-
+  80% {
+    visibility: visible;
+    -webkit-transform: translate3d(102%, 0, 0);
+    transform: translate3d(102%, 0, 0);
+  }
   100% {
-    opacity: 0.8;
+    visibility: visible;
+    opacity: 0.75;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
@@ -465,12 +471,17 @@ body {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-105%, 0, 0);
   }
+  10% {
+    visibility: visible;
+  }
   80% {
-    -webkit-transform: translate3d(110%, 0, 0);
-    transform: translate3d(95%, 0, 0);
+    visibility: visible;
+    -webkit-transform: translate3d(102%, 0, 0);
+    transform: translate3d(102%, 0, 0);
   }
   100% {
-    opacity: 0.8;
+    visibility: visible;
+    opacity: 0.75;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
@@ -480,34 +491,88 @@ body {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
-/* @-webkit-keyframes rotatePushTop {
-  from {
-  }
-  to {
+
+@-webkit-keyframes fadeInRight {
+  0% {
     opacity: 0;
-    -webkit-transform: rotateX(-90deg);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  10% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
-@keyframes rotatePushTop {
-  from {
-  }
-  to {
+@keyframes fadeInRight {
+  0% {
     opacity: 0;
-    -webkit-transform: rotateX(-90deg);
-    transform: rotateX(-90deg);
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  10% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@-webkit-keyframes rotatePullBottom {
-  from {
-    opacity: 0;
-    -webkit-transform: rotateX(90deg);
-  }
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
 }
-@keyframes rotatePullBottom {
-  from {
-    opacity: 0;
-    -webkit-transform: rotateX(90deg);
-    transform: rotateX(90deg);
-  }
-} */
+
+.ml16 {
+  color: #777;
+  font-weight: 300;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.vid-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.hst-page-link-div {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background-color: rgba(255, 255, 255, 0.158);
+  width: 35%;
+  color: #fff;
+}
+.job-btn-div {
+  position: absolute;
+  top: 4.1%;
+  left: 4.2%;
+}
+
+.job-btn-div .spec-job-btn-div .btn {
+  background-color: rgba(41, 41, 41, 0.411);
+  margin-top: 5px;
+}
+
+.job-btn-div .spec-job-btn-div .btn .ml16 {
+  color: #fff;
+}
