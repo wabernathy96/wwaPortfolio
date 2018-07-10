@@ -28,7 +28,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  /* padding: 30px; */
 }
 
 /* 
@@ -617,4 +617,8 @@ body {
   border-radius: 100px;
   transition: all 0.2s;
   position: relative;
+}
+
+.proj-main {
+  background: linear-gradient(to right bottom, #a02baf86, #28b48591);
 }
