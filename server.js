@@ -1,5 +1,6 @@
 const express = require("express");
 const hbs = require("express-handlebars");
+const mongoose = require("mongoose");
 
 // Setup Server
 const app = express();
@@ -16,6 +17,17 @@ app.set("view engine", "hbs");
 // Routing
 const routes = require("./routes/routes");
 app.use("/", routes);
+
+// Database
+const db = require("./config/keys").mongoURI;
+
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("🦔 MongoDB Connected 🦔"))
+  .catch(err => console.log(err));
 
 // Start Server
 app.listen(PORT, () => console.log(`🧟‍ ITS ALIIIVE ON PORT ${PORT} 🧟‍`));

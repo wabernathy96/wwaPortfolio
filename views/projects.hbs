@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<main class="proj-main">
+  <div class="container">
+    <div class="row">
+      <div class="featured-proj">
+        {{#each Project}}
+        <div class="col s12 m6 l6">
+          <div class="card" style="height:225px;" id={{this._id}}>
+
+
+            <div class="card-content center">
+
+              <span class="card-title">
+                {{this.name}}
+              </span>
+
+              <p>
+                <span class="proj-desc">
+                  {{this.description}}
+                </span>
+              </p>
+
+              <div class="proj-btn-div">
+                <a class="btn-floating btn-large waves-effect waves-light white" style="margin-top: 10px;" href={{this.url}}>
+                  <img class="git-icon" height="56px" width="56px" style="z-index: 1;" src="/images/github.png" alt="github-logo" />
+                </a>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="go-back-div proj-back">
+    <a class="proj-back-a go-back" href="/home">
+      <img class="go-back-arrow" src="/images/backArrowGrey.png" />
+    </a>
+  </div>
+</main>

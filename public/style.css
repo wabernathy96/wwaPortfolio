@@ -438,7 +438,7 @@ body {
 
 .go-back-div {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   top: 85%;
   animation: fadeInLeft 3s ease-in-out 0.5s 1 forwards;
 }
@@ -578,4 +578,43 @@ body {
 
 .job-btn-div .spec-job-btn-div .btn .ml16 {
   color: #fff;
+}
+
+.proj-div {
+  position: absolute;
+  text-align: center;
+}
+
+.featured-proj .card .small {
+  height: 200px !important;
+}
+.proj-back:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+
+.proj-back:active {
+  transform: translateY(-1px);
+  /* Decrease size/blur of shadow in order to give appearance of moving closer to page */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+}
+
+.proj-back:hover::after {
+  transform: scaleX(1.2) scaleY(1.4);
+  opacity: 0;
+  border-radius: 100px;
+}
+
+.proj-back-a:link,
+.proj-back-a:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* first value = top/bottom, second value = left/right */
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
 }
