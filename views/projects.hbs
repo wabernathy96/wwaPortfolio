@@ -20,11 +20,17 @@
                 </span>
               </p>
 
-              <div class="proj-btn-div">
+              <div class="card-action">
                 <a class="btn-floating btn-large waves-effect waves-light white" style="margin-top: 10px;" href={{this.url}}>
                   <img class="git-icon" height="56px" width="56px" style="z-index: 1;" src="/images/github.png" alt="github-logo" />
                 </a>
+                {{#if this.deploy}}
+                <a class="btn-floating btn-large waves-effect waves-light white" style="margin-top: 10px; margin-left: 5px;" href={{this.deploy}}>
+                   <img class="git-icon" height="51px" width="49px" style="z-index: 1;" src="/images/deployIcon.png" alt="github-logo" />
+                </a>
+                {{/if}}
               </div>
+
 
 
             </div>

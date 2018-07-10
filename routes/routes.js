@@ -13,25 +13,31 @@ routes.get("/api/projects", (req, res) => {
   let options = {
     url: "https://api.github.com/users/wabernathy96/repos",
     method: "GET",
-    headers: { "user-agent": "node.js" }
+    headers: { "user-agent": "chrome" }
   };
 
   rp(options)
     .then(body => {
       let data = JSON.parse(body);
 
-      for (let j = 0; j < data.length; j++) {
-        const repo = new Project({
-          name: data[i].name,
-          description: data[i].description,
-          url: data[i].html_url,
-          createdat: data[i].created_at
+      for (let i = 0; i < data.length; i++) {
+        Project.find({ name: res.name }).then(dbData => {
+          if (dbData.name === data[i].name) {
+            console.log("Record already added");
+          } else {
+            const repo = new Project({
+              name: data[i].name,
+              description: data[i].description,
+              url: data[i].html_url,
+              createdat: data[i].created_at
+            });
+            repo.save();
+            console.log("Heyo");
+          }
         });
-        repo.save();
-        console.log("Heyo");
       }
     })
-    .catch(err => res.json(err));
+    .catch(err => res.status(400).json(err));
 });
 
 routes.get("/projects", (req, res) => {
