@@ -364,12 +364,14 @@ body {
   position: absolute;
   top: 44%;
   left: 74%;
+  border-radius: 25%;
   animation: fadeInRight 2s ease-in-out 0.5s 1 forwards;
 }
 
 #wa-img {
   height: 450px;
   width: 410px;
+  border-radius: inherit;
 }
 
 
@@ -685,33 +687,82 @@ body {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Desktops and laptops */
+@media only screen and (min-width : 1224px) {
+  /* ----- ABOUT --------- */
+  .who-div {
+    left: 45%;
+  }
+  .wa-img-div {
+    top: 55%;
+  }
+  /* ----- WORK HISTORY -------- */
+  .wrk-buttons {
+    left: 20%;
+  }
+  .wrk-og {
+    left: 45%;
+  }
+  .cnt {
+    left: 40%;
+  }
+  /* ----- CONTACT ------ */
+  .contactInfo {
+    text-align: center;
+    left: 34%;
+  }
+  .contactButtons {
+    left: 31.5%;
+    top: 50%;
+  }
+}
+
+/* Tablets (landscape) */
+@media only screen and (min-width : 1024px) and (max-width : 1366px) and (orientation : landscape) {
+  /* ------ ABOUT --------- */
+  .who-div {
+    left: 28%;
+  }
+  .bio-div {
+    text-align: center;
+    width: 50%;
+    left: 25%;
+  }
+  .wa-img-div {
+    left: 60%;
+    top: 65%;
+  }
+  #abt-btn-div {
+    top: 70%;
+    left: 15%;
+  }
+  /* ------ WORK HISTORY --------- */
+  .vid-div {
+    content: url("/images/ipadLandStream.png");
+  }
+}
+
 /* Tablets (portrait) */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-  /* -------- HOME -------- */
-  .fs-bg-div {
-    content: url("/images/ipadLake.png");
-    height: 100%
-  }
-  .home-topper-div {
-    display: none;
-  }
-  /* -------- ABOUT ----------- */
+@media only screen and (min-width : 768px) and (max-width : 1024px) and (orientation : portrait) {
+  /* ------ ABOUT -------- */
   .who-div {
     width: 100%;
-    left: 18%;
     top: 5%;
+    left: 25%;
   }
   .bio-div {
     width: 95%;
-    left: 3%;
+    left: 5%;
     top: 20%;
     text-align: center;
-    font-size: 1em;
   }
   .wa-img-div {
-    left: 25%;
-    top: 45%;
+    left: 55%;
+    top: 50%;
     border-radius: 25%;
+  }
+  #abt-btn-div {
+    top: 50%;
   }
   #wa-img {
     border-radius: inherit;
@@ -720,38 +771,137 @@ body {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
-  #abt-btn-div {
-    top: 95%;
-    left: 20%;
-    margin-top: 3vh;
+  #abt-back-btn {
+    top: 70%;
   }
-  /* -------- WORK HISTORY ------------ */
-  .vid-div {
-    content: url("/images/ipadStream.png");
+  /* ----- WORK HISTORY ----------*/
+  #wrkBack {
+    top: 65%;
   }
-  .wrk-buttons {
-    width: 35%;
-  }
-  .ipadWrkBtn {
-    font-size: 26px;
-  }
-  .cnt {
-    width: 40%;
-  }
-  /* ------- CONTACT ------------- */
+  /* ------ CONTACT ---------- */
   .contactInfo {
-    left: 13%;
-    top: 25%;
+    width: 100%;
+    left: 1%;
   }
   .contactButtons {
     width: 100%;
-    left: 6.8%;
-    top: 45%;
+    left: 5%;
+    top: 50%;
   }
 
 }
+
+/* Smartphones (landscape) */
+@media only screen and (min-width : 568px) and (max-width : 823px) and (orientation : landscape){
+  /* --------- ALL ----------- */
+  .go-back-arrow {
+    height: 40px;
+    width: 50px;
+  }
+  
+  /* ---------- LANDING ---------- */
+  .header {
+    position: relative;
+    height: 95vh;
+    background-image: url("./images/bigBend.jpg");
+    background-size: cover;
+    background-position: top;
+    clip-path: none;
+  }
+  .heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+  
+    backface-visibility: hidden;
+    margin-bottom: 50px;
+  }
+
+  .heading-primary-main {
+    display: block;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+  }
+  .heading-primary-sub {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 17.4px;
+  
+    animation: moveInRight 1.5s ease-out;
+  }
+
+  /* ------- HOME ----------- */
+  .home-topper-div {
+    display: none;
+  }
+  .fs-bg-div {
+    content: url("/images/rockInLake.png");
+  }
+
+  /* ------ ABOUT ----------- */
+  .who-div {
+    width: 100%;
+    top: 0%;
+    left: 15%;
+  }
+  .bio-div {
+    width: 100%;
+    left: 0%;
+    text-align: center;
+  }
+  #wa-img {
+    height: 340px;
+    width: 300px;
+  }
+  .wa-img-div {
+    left: 58%;
+    top: 75%;
+  }
+  #abt-btn-div {
+    top: 95%;
+    left: 0%;
+  }
+  .abt-btn {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  /* ------ WORK HISTORY ------------ */
+  .vid-div {
+    content: url("/images/ipadStream.png");
+  }
+  .wrk-og {
+    width: 100%;
+    top: 0%;
+    left: 0%;
+  }
+  .cnt {
+    width: 100%;
+    top: 0%;
+    left: 0%;
+  }
+  .wrk-buttons {
+    width: 75%;
+    left: 15%;
+    top: 85%;
+  }
+  /* ------- CONTACT ----------- */
+  .contactInfo {
+    width: 100%;
+    left: 1%;
+  }
+  .contactButtons {
+    width: 100%;
+    left: 1%;
+    top: 55%;
+  }
+}
 /* Smartphones (portrait) */
-@media only screen and (min-width : 320px) {
+@media only screen and (min-width : 321px) and (max-width: 414px) and (orientation : portrait ) {
   /* --------- ALL ----------- */
   .go-back-arrow {
     height: 40px;
@@ -804,13 +954,13 @@ body {
   }
   .wa-img-div {
     top: 65%;
-    left: 19%;
+    left: 22%;
     border-radius: 25%;
   }
   .who-div {
     position: absolute;
     top: 5%;
-    left: 12%;
+    left: 15%;
   }
   .ml12 {
     font-weight: 450;
@@ -834,7 +984,7 @@ body {
   }
   #abt-btn-div {
     top: 105%;
-    left: 12%;
+    left: 16%;
     margin-top: 3vh;
   }
   #offclock-btn-div {
@@ -891,6 +1041,154 @@ body {
   }
   .contactButtons {
     top: 35%;
+  }
+  .resumeBtn {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+/* Iphone 5 (portrait) */
+@media only screen and (max-width : 320px) and (orientation : portrait ) {
+  /* --------- ALL ----------- */
+  .go-back-arrow {
+    height: 40px;
+    width: 50px;
+  }
+  
+  /* ---------- LANDING ---------- */
+  
+  .heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+  
+    backface-visibility: hidden;
+    margin-bottom: 50px;
+  }
+
+  .heading-primary-main {
+    display: block;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+  }
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 17.4px;
+  
+    animation: moveInRight 1.5s ease-out;
+  }
+
+  /* ---------- HOME -------------- */
+  .home-topper-div {
+    display: none;
+  }
+  .fs-bg-div {
+    content: url("/images/rockInLake.png");
+    height: 100%;
+  }
+
+  /* -------- ABOUT ------------- */
+  #wa-img {
+    height: 270px;
+    width: 230px;
+    border-radius: inherit;
+  }
+  .wa-img-div {
+    top: 80%;
+    left: 18%;
+    border-radius: 25%;
+  }
+  .who-div {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+  }
+  .ml12 {
+    font-weight: 450;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .ml16 {
+    font-size: 20px;
+    letter-spacing: .2em;
+  }
+  .bio-div {
+    position: absolute;
+    left: .3%;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+  }
+  .bio {
+    font-size: 12px;
+  }
+  #abt-btn-div {
+    top: 125%;
+    left: 8%;
+    margin-top: 3vh;
+  }
+  #offclock-btn-div {
+    margin-top: 1vh;
+  }
+  .abt-btn {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  #abt-back-btn {
+    top: 85%;
+  }
+  /* ----- WORK HISTORY --------- */
+  .showSingle {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  .vid-div {
+    display: none;
+    background: linear-gradient(to right bottom, #7bf765af, #28b485c7);
+  }
+  .wrk-og {
+    position: absolute;
+    left: 0%;
+    top: 10%;
+    width: 100%;
+  }
+  .targetDiv {
+    width: 100%;
+  }
+  .wrk-buttons {
+    width: 100%;
+    top: 95%;
+    left: 0%;
+  }
+  .cnt {
+    width: 100%;
+    left: 0%;
+    top: 0%;
+  }
+  /* ----- OFF THE CLOCK -------- */
+  #offTitId {
+    font-size: 25px !important;
+    font-weight: 600;
+  }
+  /* ------- CONTACT ---------- */
+  .contactInfo {
+    width: 100%;
+    left: 1%;
+    top: 20%;
+  }
+  .contactText {
+    font-size: 20px;
+  }
+  .contactButtons {
+    top: 40%;
+    left: 22%;
   }
   .resumeBtn {
     transform: translateY(-1px);
