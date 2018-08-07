@@ -90,8 +90,6 @@ body {
   animation-name: moveInLeft;
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
-  /* animation-iteration-count: 3;
-  animation-delay: 0.5s; */
 }
 
 .heading-primary-sub {
@@ -369,6 +367,11 @@ body {
   animation: fadeInRight 2s ease-in-out 0.5s 1 forwards;
 }
 
+#wa-img {
+  height: 450px;
+  width: 410px;
+}
+
 
 .ml3 {
   position: relative;
@@ -575,6 +578,13 @@ body {
   align-content: center !important;
 }
 
+.offTitleDiv {
+  width: 100%;
+  text-align: center;
+}
+.offTitle {
+  font-size: 3em !important;
+}
 .proj-div {
   position: absolute;
   text-align: center;
@@ -668,4 +678,161 @@ body {
   font-weight: 300;
   font-size: 2em;
   letter-spacing: 0.1em;
+}
+
+.resumeBtn {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tablets (portrait) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+ 
+}
+/* Smartphones (portrait) */
+@media only screen and (min-width : 320px) and (max-width: 414px) {
+  /* --------- ALL ----------- */
+  .go-back-arrow {
+    height: 40px;
+    width: 50px;
+  }
+  
+  /* ---------- LANDING ---------- */
+  
+  .heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+  
+    backface-visibility: hidden;
+    margin-bottom: 50px;
+  }
+
+  .heading-primary-main {
+    display: block;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+  }
+  .heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 17.4px;
+  
+    animation: moveInRight 1.5s ease-out;
+  }
+
+  /* ---------- HOME -------------- */
+  .home-topper-div {
+    display: none;
+  }
+  .fs-bg-div {
+    content: url("/images/rockInLake.png");
+    height: 100%;
+  }
+
+  /* -------- ABOUT ------------- */
+  #wa-img {
+    height: 270px;
+    width: 230px;
+    border-radius: inherit;
+  }
+  .wa-img-div {
+    top: 65%;
+    left: 19%;
+    border-radius: 25%;
+  }
+  .who-div {
+    position: absolute;
+    top: 5%;
+    left: 12%;
+  }
+  .ml12 {
+    font-weight: 450;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .ml16 {
+    font-size: 20px;
+    letter-spacing: .2em;
+  }
+  .bio-div {
+    position: absolute;
+    left: .3%;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+  }
+  .bio {
+    font-size: 12px;
+  }
+  #abt-btn-div {
+    top: 105%;
+    left: 12%;
+    margin-top: 3vh;
+  }
+  #offclock-btn-div {
+    margin-top: 1vh;
+  }
+  .abt-btn {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  #abt-back-btn {
+    top: 85%;
+  }
+  /* ----- WORK HISTORY --------- */
+  .showSingle {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  .vid-div {
+    display: none;
+    background: linear-gradient(to right bottom, #7bf765af, #28b485c7);
+  }
+  .wrk-og {
+    position: absolute;
+    left: 0%;
+    top: 10%;
+    width: 100%;
+  }
+  .targetDiv {
+    width: 100%;
+  }
+  .wrk-buttons {
+    width: 100%;
+    top: 75%;
+    left: 0%;
+  }
+  .cnt {
+    width: 100%;
+    left: 0%;
+    top: 0%;
+  }
+  /* ----- OFF THE CLOCK -------- */
+  #offTitId {
+    font-size: 30px !important;
+    font-weight: 600;
+  }
+  /* ------- CONTACT ---------- */
+  .contactInfo {
+    width: 100%;
+    left: 1%;
+    top: 20%;
+  }
+  .contactText {
+    font-size: 20px;
+  }
+  .contactButtons {
+    top: 35%;
+  }
+  .resumeBtn {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
 }
