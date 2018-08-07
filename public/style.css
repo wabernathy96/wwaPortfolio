@@ -687,6 +687,19 @@ body {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
+
+@media only screen and (min-width : 1400px) {
+  /* ----- WORK HISTORY -------- */
+  .wrk-buttons {
+    left: 20%;
+  }
+  .wrk-og {
+    left: 45%;
+  }
+  .cnt {
+    left: 40%;
+  }
+}
 /* Desktops and laptops */
 @media only screen and (min-width : 1224px) {
   /* ----- ABOUT --------- */
@@ -698,7 +711,7 @@ body {
   }
   /* ----- WORK HISTORY -------- */
   .wrk-buttons {
-    left: 20%;
+    left: 15%;
   }
   .wrk-og {
     left: 45%;
