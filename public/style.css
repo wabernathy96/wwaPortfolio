@@ -687,7 +687,68 @@ body {
 
 /* Tablets (portrait) */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
- 
+  /* -------- HOME -------- */
+  .fs-bg-div {
+    content: url("/images/ipadLake.png");
+    height: 100%
+  }
+  .home-topper-div {
+    display: none;
+  }
+  /* -------- ABOUT ----------- */
+  .who-div {
+    width: 100%;
+    left: 18%;
+    top: 5%;
+  }
+  .bio-div {
+    width: 95%;
+    left: 3%;
+    top: 20%;
+    text-align: center;
+    font-size: 1em;
+  }
+  .wa-img-div {
+    left: 25%;
+    top: 45%;
+    border-radius: 25%;
+  }
+  #wa-img {
+    border-radius: inherit;
+  }
+  .abt-btn {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  #abt-btn-div {
+    top: 95%;
+    left: 20%;
+    margin-top: 3vh;
+  }
+  /* -------- WORK HISTORY ------------ */
+  .vid-div {
+    content: url("/images/ipadStream.png");
+  }
+  .wrk-buttons {
+    width: 35%;
+  }
+  .ipadWrkBtn {
+    font-size: 26px;
+  }
+  .cnt {
+    width: 40%;
+  }
+  /* ------- CONTACT ------------- */
+  .contactInfo {
+    left: 13%;
+    top: 25%;
+  }
+  .contactButtons {
+    width: 100%;
+    left: 6.8%;
+    top: 45%;
+  }
+
 }
 /* Smartphones (portrait) */
 @media only screen and (min-width : 320px) and (max-width: 414px) {
