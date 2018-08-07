@@ -293,16 +293,6 @@ body {
   opacity: 0.5;
 } */
 
-@media (max-width: 767px) {
-  .fs-bg-div {
-    background: url("../public/images/rockInLake.png") center center / cover
-      no-repeat;
-  }
-
-  .lake-vid {
-    display: none;
-  }
-}
 
 #about-btn-div {
   top: 10%;
@@ -369,7 +359,6 @@ body {
   position: absolute;
   left: 40%;
   top: 10%;
-  width: 38vw;
 }
 
 .wa-img-div {
@@ -380,32 +369,6 @@ body {
   animation: fadeInRight 2s ease-in-out 0.5s 1 forwards;
 }
 
-@media (max-width: 980px) {
-  
-}
-@media (max-width: 768px) {
-  
-}
-@media (max-width: 640px) {
-  
-}
-@media (max-width: 320px) {
-  .ml12 {
-    font-weight: 300;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  .wa-img-div {
-    top: 110%;
-  }
-  .bio-div {
-    width: 60%;
-  }
-  .who-div {
-    width: 10%;
-  }
-}
 
 .ml3 {
   position: relative;
@@ -688,5 +651,21 @@ body {
   background: linear-gradient(to right bottom, #a02baf86, #28b48591);
 }
 
+.contactButtons {
+  position: absolute;
+  top: 70%;
+  left: 25.5%;
+}
 
+.contactInfo {
+  position: absolute;
+  top: 28%;
+  left: 28%;
+  text-align: center;
+}
 
+.contactText {
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+}

@@ -26,8 +26,8 @@ mongoose
     db,
     { useNewUrlParser: true }
   )
-  .then(() => console.log("🦔 MongoDB Connected 🦔"))
+  .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
 // Start Server
-app.listen(PORT, () => console.log(`🧟‍ ITS ALIIIVE ON PORT ${PORT} 🧟‍`));
+app.listen(PORT, () => console.log(`ITS ALIVE ON PORT ${PORT}`));

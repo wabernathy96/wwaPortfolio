@@ -9,6 +9,7 @@ routes.get("/home", (req, res) => res.render("home"));
 routes.get("/about", (req, res) => res.render("about"));
 routes.get("/about/work-history", (req, res) => res.render("workhistory"));
 routes.get("/about/off-clock", (req, res) => res.render("offclock"));
+routes.get("/contact", (req, res) => res.render("contact"));
 routes.get("/api/projects", (req, res) => {
   let options = {
     url: "https://api.github.com/users/wabernathy96/repos",
