@@ -722,10 +722,10 @@ body {
   /* ----- CONTACT ------ */
   .contactInfo {
     text-align: center;
-    left: 34%;
+    left: 28%;
   }
   .contactButtons {
-    left: 31.5%;
+    left: 24%;
     top: 50%;
   }
 }
